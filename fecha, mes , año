@@ -1,0 +1,37 @@
+#include "iostream"
+void mifuncion(int*,int*,int*);
+using namespace std;
+
+int main(void)
+{
+    int dd,mm,aa;
+    cout<<"ENSEÑAR LA FECHA COLOCADA DESPUES DE UN DIA"<<endl<<endl;
+    mifuncion(&dd,&mm,&aa);
+    cout<<" fecha colocada  un dia despues es: "<<dd<<"/"<<mm<<"/"<<aa<<endl;
+    return 0;
+}
+void mifuncion(int*dd,int*mm,int*aa)
+{
+    cout<<"coloque un dia: ";
+    cin>>*dd;
+    cout<<"coloque el mes: ";
+    cin>>*mm;
+    cout<<"coloque el año"<<(char)164<<"o: ";
+    cin>>*aa;
+
+    while(*aa%4==0 &&*aa%100!=0 || *aa%400==0)
+    {
+       *dd++;
+        if(*dd>31){
+            *dd=*dd+1;
+            *mm++;
+            if(*mm>12){
+                *mm=*mm+1;
+                *aa++;
+                
+            }
+        }
+        
+   
+    }
+}
